@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>InfyDataQ</title>
+</head>
+<body class="infyImage"> 
+
+    {% comment %} <img src="https://officechai.com/wp-content/uploads/2015/08/infy-mysore.jpg" alt="infy" /> {% endcomment %}
+
+
+  
+    <center>
+        <form method="POST">
+            {% csrf_token %}
+          
+        <h1>Welcome to InfyDataQ</h1>
+        
+      <br><br>
+        <table  >
+        {{form}}
+        </table>
+        <br>
+        <input type="submit" value="Login"><br><br>
+     <strong style="font-size:20px;">  If you are a new user, <a href="{% url 'signnewuser'%}">Register here</a></strong>
+        <b style="color: red;">{{error}}</b>
+    </form>    
+    </center>
+</body>
+</html>
+<style>
+    a{
+        color:#0aadf1;
+        font-size: 20px;
+    }
+    body{
+        margin: 0;
+    }
+    html {
+        margin: 0;
+        height: 100%;
+
+    }
+    table{
+        margin-left: auto;
+        margin-right: auto;
+        
+        
+    }
+    h1{
+        padding-top:100px;
+    }
+    th,td{
+        height:100%;
+        padding-top:22px;
+        te
+    }
+   
+    .infyImage{
+        background-image: url('https://officechai.com/wp-content/uploads/2015/08/infy-mysore.jpg');
+        background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height:720px;
+
+    }
+    
+   
+
+</style>

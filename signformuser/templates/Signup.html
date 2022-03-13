@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <title>InfyDataQ</title>
+</head>
+<body><center>
+    
+    <h3>Are you a new user? To register, please provide below details:</h3>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <table >
+        {{form}}    
+    </table>
+    <br><br>
+    <input type="submit" value="Create User"/>  
+   
+    <h1 style="color: red;">{{error}}</h1>  
+    <h1 style="color: green;">{{info}}</h1>
+    </form>        
+</center></body>
+
+</html>
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+     
+      body {
+        background: linear-gradient(90deg, #C7C5F4, #776BCC);
+    }
+    html {
+        margin: 0;
+        height: 100%;
+
+    }
+
+</style>
