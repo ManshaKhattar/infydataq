@@ -65,11 +65,11 @@
         <h1 style="color: #700e0e;" >Please select one option :</h1>
                
                 <button class="button button2">
-                    <span class="button__text"><a  href="Login.html"></a>User</span>
+                    <span class="button__text"><a  href="{% url 'loginuser'%}">User</a></span>
                     <i class="button__icon fas fa-chevron-right"></i>
                 </button>
                 <button class="button button1">
-                    <span class="button__text">Admin</span>
+                    <span class="button__text"><a href="{% url 'adminlogin'%}">Admin</a></span>
                     <i class="button__icon fas fa-chevron-right"></i>
                 </button>  
                 <div id ="bottom">                   
