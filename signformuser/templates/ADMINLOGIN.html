@@ -12,13 +12,14 @@
       <br><br>
         <table>
 		<form method="POST">
+            {% csrf_token %}
 		<tr>
                 <td>
                     <label for="name">
                        <em><b> ADMIN-ID</b></em>
                     </label>
                 </td>
-                <td><input type="text" id="name" />
+                <td><input type="text" name="name"id="name" required/>
                 </td>
             </tr>
 		<tr>
@@ -26,7 +27,7 @@
                         <em><b>EMAIL-ID</b></em>
                     </label>
                 </td>
-                <td><input type="email" id="email" />
+                <td><input type="email" name="email" id="email" required />
                 </td>
             </tr>
 		<tr>
@@ -34,15 +35,15 @@
                        <em><b> PASSWORD</b></em>
                     </label>
                 </td>
-                <td><input type="password" id="password" />
+                <td><input type="password" name="password" id="password" required/>
                 </td>
             </tr>
-      	</form>
         </table>
         <br>
-        <button type="submit"><a href="ADMINWELCOME.html">Login</a></button>
-     		<strong style="font-size:25px;position:fixed; left:560px; top:555px;">  If you are a new Admin,<a href="ADMINSIGNUP.html">Register here</a></strong>
-        
+        <input type="submit" value ="Login"><a href="{% url 'adminwelcome'%}"></a>
+     		<strong style="font-size:25px;position:fixed; left:560px; top:555px;">  If you are a new Admin,<a href="{% url 'adminsignup'%}">Register here</a></strong>
+            <b style="color: red; font-size: 25px;">{{error}}</b>
+    </form>
      
     </center>
 </body>
