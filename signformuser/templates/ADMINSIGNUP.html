@@ -52,7 +52,7 @@
                        <em><b> PASSWORD :</b></em>
                     </label>
                 </td>
-                <td><input type="password" id="password" placeholder="PASSWORD" name="password" required/><br><br>
+                <td><input type="password" id="password1" placeholder="PASSWORD" name="password1" required/><br><br>
                 </td>
             </tr>
 
@@ -62,15 +62,15 @@
                        <em><b> CONFIRM PASSWORD :</b></em>
                     </label>
                 </td>
-                <td><input type="password" id="confirm password" placeholder="CONFIRM PASSWORD" name="confirm password" required/><br><br>
+                <td><input type="password" id="password2" placeholder="CONFIRM PASSWORD" name="password2" required/><br><br>
                 </td>
             </tr>
 
-	<button type="submit" class="registerbtn"><a href="ADMINLOGIN.html">Register</a></button><br><br>
+	<input  type="submit" class="registerbtn" value="Register" ><br><br>
 
 	
  </form>    
-<h1>Already have an account? <a href="ADMINLOGIN.html">Sign in</a>.</h1>    
+<h1>Already have an account? <a href="{% url 'adminlogin'%}">Sign in</a>.</h1>    
 </center></body>
 
 </html>
