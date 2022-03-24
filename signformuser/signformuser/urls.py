@@ -23,7 +23,11 @@ urlpatterns = [
     path('register/',views.signnewuser,name="signnewuser"),                                                 #'register/'
     path('',views.loginuser,name="loginuser"),
     path('Welcome/',views.Welcomepage,name="Welcomepage"),
-    path('Logout/',views.logoutpage,name="logoutpage")
+    path('Logout/',views.logoutpage,name="logoutpage"),
+    path('page1/',views.home,name="home"),
+    path('adminlogin/',views.adminlogin,name="adminlogin"),
+    path('adminsignup/',views.adminsignup,name="adminsignup"),
+    path('adminwelcome/',views.adminwelcome,name="adminwelcome")
     # path('Logout',views),
     #  path('', views.home)
 ]
