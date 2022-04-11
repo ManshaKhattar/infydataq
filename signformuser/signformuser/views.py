@@ -53,7 +53,9 @@ def Welcomepage(request):
 def logoutpage(request):
     if request.method=="POST":
         logout(request)
-        return redirect('loginuser')    
+    else:    
+        return redirect('loginuser')
+    
 def adminlogin(request):
     return render(request,'ADMINLOGIN.html')
 def adminsignup(request):
