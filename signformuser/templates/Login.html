@@ -1,70 +1,121 @@
-{% load static %}
 <!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
-    <title>InfyDataQ</title>
-</head>
-<body class="infyImage"> 
+<style>
+ body {background: linear-gradient(90deg, #dbd8c4, #c4775f80);}
+ .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 80vh;
+            }
 
-    {% comment %} <img src="https://officechai.com/wp-content/uploads/2015/08/infy-mysore.jpg" alt="infy" /> {% endcomment %}
-
-
+.fancy {
+  position: relative;
+  background-image: url('https://officechai.com/wp-content/uploads/2015/08/infy-mysore.jpg');
+  background-position: center;
+    background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+  padding: 2rem;
+  height: 475px;
+  width: 600px;
+  box-shadow: 0px 0px 35px #a47854;
+  text-align: center;
   
-    <center>
-        <form method="POST">
-            {% csrf_token %}
-          
-        <h1>Welcome to InfyDataQ</h1>
-        
-      <br><br>
-        <table  >
-        {{form}}
-        </table>
-        <br>
-        <input type="submit" value="Login"><br><br>
-     <strong style="font-size:20px;">  If you are a new user, <a href="{% url 'signnewuser'%}">Register here</a></strong>
-        <b style="color: red;">{{error}}</b>
-    </form>    
-    </center>
+}
+
+.fancy::before {
+  content: "";
+
+  position : absolute;
+  z-index  : -1;
+  bottom   : 15px;
+  right    : 5px;
+  width    : 50%;
+  top      : 80%;
+  
+
+  box-shadow: 0px 13px 10px black;
+  transform: rotate(4deg);
+}
+
+.ghost-round {
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 25px;
+  color: rgb(22, 18, 16);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  margin-top: 25px;
+margin-bottom: 40px;
+align-self: flex-end;
+}
+.ghost-round:hover {
+        background: rgba(41, 13, 13, 0.15);
+        color: rgb(228, 99, 99);
+        -webkit-transition: all .2s ease;
+        transition: all .2s ease;
+        }
+.input-fields {
+        margin-top: 50px;
+        }
+        .input-line {
+        background: none;
+        margin-bottom: 10px;
+        line-height: 2.4em;
+        color: rgb(27, 7, 7);
+        font-family: roboto;
+        font-weight: 300;
+        letter-spacing: 0px;
+        letter-spacing: 0.02rem;
+        font-size: 19px;
+        font-size: 1.2rem;
+        border-bottom: 1px solid rgba(175, 46, 46, 0.65);
+        -webkit-transition: all .2s ease;
+        transition: all .2s ease;
+        }
+
+        .full-width {
+        width: 100%;
+        }
+
+
+
+#bottom {
+                position:absolute; 
+                             
+                bottom: 100px;                         
+                left:200px;                          
+            }
+</style>
+</head>
+<body>
+    <h1 style="text-align:center;color: #1b0c3b; " >InfyDataQ </h1>
+   
+    <div class="container"><div class="fancy">
+        <h1 style="color: #700e0e;" >Welcome Back ! </h1>
+        <h1 style="color: #700e0e;" >Login to continue .</h1>
+               
+        <div class='input-fields'>
+            <input type='text' placeholder='Username' class='input-line full-width'></input>         
+           
+            <input type='password' placeholder='Password' class='input-line full-width'></input> 
+        </div>
+        <div><button  class='ghost-round full-width'><a  href="{% url 'Welcomepage'%}">Login</a></button></div>
+
+        <strong style="font-size:20px;text-shadow: 2px 2px 5px rgb(150, 10, 10);
+        color: rgb(2, 2, 2);margin-bottom: 30px;">  If you are a new user, <a href="{% url 'signnewuser'%}" > Register here</a></strong>
+    
+    </div>
+</div>
+    
+</div>
+</div>
+
 </body>
 </html>
-<style>
-    a{
-        color:#0aadf1;
-        font-size: 20px;
-    }
-    body{
-        margin: 0;
-    }
-    html {
-        margin: 0;
-        height: 100%;
-
-    }
-    table{
-        margin-left: auto;
-        margin-right: auto;
-        
-        
-    }
-    h1{
-        padding-top:100px;
-    }
-    th,td{
-        height:100%;
-        padding-top:22px;
-        te
-    }
-   
-    .infyImage{
-        background-image: url('https://officechai.com/wp-content/uploads/2015/08/infy-mysore.jpg');
-        background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  height:720px;
-
-    }
-    
-   
-
-</style>
