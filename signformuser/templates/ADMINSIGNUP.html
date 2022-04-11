@@ -1,92 +1,122 @@
 <!DOCTYPE html>
 <head>
     <title>InfyDataQ</title>
+    <style>
+        body {background: linear-gradient(90deg, #dbd8c4, #c4775f80);}
+        .container {
+                       display: flex;
+                       align-items: center;
+                       justify-content: center;
+                       min-height: 80vh;
+                   }
+       
+       .fancy {
+         position: relative;
+         background-color: rgb(223, 201, 103);
+         padding: 2rem;
+         height: 600px;
+         width: 600px;
+         box-shadow: 0px 0px 35px #a47854;
+         text-align: center;
+         
+       }
+       
+       .fancy::before {
+         content: "";
+       
+         position : absolute;
+         z-index  : -1;
+         bottom   : 15px;
+         right    : 5px;
+         width    : 50%;
+         top      : 80%;
+         
+       
+         box-shadow: 0px 13px 10px black;
+         transform: rotate(4deg);
+       }
+       
+       .ghost-round {
+           border: 1px solid rgba(255, 255, 255, 0.65);
+           border-radius: 25px;
+         color: rgb(22, 18, 16);
+         padding: 15px 32px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 18px;
+         margin: 4px 2px;
+         cursor: pointer;
+         margin-top: 25px;
+       margin-bottom: 40px;
+       align-self: flex-end;
+       }
+       .ghost-round:hover {
+               background: rgba(41, 13, 13, 0.15);
+               color: rgb(228, 99, 99);
+               -webkit-transition: all .2s ease;
+               transition: all .2s ease;
+               }
+       .input-fields {
+               margin-top: 50px;
+               }
+               .input-line {
+               background: none;
+               margin-bottom: 10px;
+               line-height: 2.4em;
+               color: #fff;
+               font-family: roboto;
+               font-weight: 300;
+               letter-spacing: 0px;
+               letter-spacing: 0.02rem;
+               font-size: 19px;
+               font-size: 1.2rem;
+               border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+               -webkit-transition: all .2s ease;
+               transition: all .2s ease;
+               }
+       
+               .full-width {
+               width: 100%;
+               }
+       
+       
+       
+       #bottom {
+                       position:absolute; 
+                                    
+                       bottom: 100px;                         
+                       left:200px;                          
+                   }
+       </style>
 </head>
-<body><center>
+<body>
+    <h1 style="text-align:center;color: #1b0c3b; " >Hello There !New Admin. </h1>
+    <h2 style="text-align:center;color: #1b0c3b; " >We're almost done.  </h2>
+    <div class="container"><div class="fancy">
+        <h1 style="color: #700e0e;" >To register, please provide below details : </h1>
+               
+        <div class='input-fields'>
+            <input type='text' placeholder='First Name' class='input-line full-width'></input>
+            <input type='text' placeholder='Last Name' class='input-line full-width'></input>
+            <input type='number' placeholder='Age' class='input-line full-width'></input>
+            <input type='email' placeholder='Email ID ' class='input-line full-width'></input>
+            <input type='password' placeholder='Password' class='input-line full-width'></input>                
+            <input type='password' placeholder='Confirm Password' class='input-line full-width'></input>
+        </div>
+        <div><button  class='ghost-round full-width'><a href="{% url 'adminwelcome'%}" Create Account></a></button></div>
+        <strong style="font-size:20px;color: rgb(2, 2, 2);margin-bottom: 30px;"> Already have an account  <a href="{% url 'adminlogin'%}" >Sign in .</a></strong>
+</div>
     
-    <h1>Are you a new Admin? To register, please provide below details:</h1>
-    
-    <form method="POST">
-	<tr>
-                <td>
-                    <label for="name">
-                       <em><b> FIRST NAME :</b></em>
-                    </label>
-                </td>
-                <td><input type="text" id="fname" placeholder="FIRST NAME" name="fname" required/><br><br>
-                </td>
-            </tr>
-	<tr>
-                <td>
-                    <label for="name">
-                       <em><b> LAST NAME :</b></em>
-                    </label>
-                </td>
-                <td><input type="text" id="Lname" placeholder="LAST NAME" name="Lname" required/><br><br>
-                </td>
-            </tr>
-  	
+    </div>
+</div>    
 
-	<tr>
-                <td>
-                    <label for="age">
-                       <em><b> AGE :</b></em>
-                    </label>
-                </td>
-                <td><input type="number" id="age" placeholder="AGE" name="age" min="20" required/><br><br>
-                </td>
-            </tr>
-	<tr>
-                <td>
-                    <label for="email">
-                       <em><b> EMAIL ID :</b></em>
-                    </label>
-                </td>
-                <td><input type="email" id="email" placeholder="EMAIL ID" name="email" required/><br><br>
-                </td>
-            </tr>
 
-    	<tr>
-                <td>
-                    <label for="password">
-                       <em><b> PASSWORD :</b></em>
-                    </label>
-                </td>
-                <td><input type="password" id="password1" placeholder="PASSWORD" name="password1" required/><br><br>
-                </td>
-            </tr>
+</div>
 
-    	<tr>
-                <td>
-                    <label for="confirm password">
-                       <em><b> CONFIRM PASSWORD :</b></em>
-                    </label>
-                </td>
-                <td><input type="password" id="password2" placeholder="CONFIRM PASSWORD" name="password2" required/><br><br>
-                </td>
-            </tr>
+</body>
 
-	<input  type="submit" class="registerbtn" value="Register" ><br><br>
 
-	
- </form>    
-<h1>Already have an account? <a href="{% url 'adminlogin'%}">Sign in</a>.</h1>    
-</center></body>
+
 
 </html>
-<style>
- 
-     
-      body {
-        background: linear-gradient(90deg, #C7C5F4, #776BCC);
-    }
-	button[type=submit] {
-    width: 10em;  height: 2.5em; background-color:DarkKhaki;
-	
-    html {
-        margin: 0;
-        height: 100%;
-
-    }
-
-</style>
