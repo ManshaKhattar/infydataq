@@ -95,7 +95,8 @@
     <h2 style="text-align:center;color: #1b0c3b; " >We're almost done.  </h2>
     <div class="container"><div class="fancy">
         <h1 style="color: #700e0e;" >To register, please provide below details : </h1>
-               
+        <form method="POST">
+          {% csrf_token %}         
         <div class='input-fields'>
             <input type='text' placeholder='First Name' class='input-line full-width'></input>
             <input type='text' placeholder='Last Name' class='input-line full-width'></input>
@@ -104,9 +105,10 @@
             <input type='password' placeholder='Password' class='input-line full-width'></input>                
             <input type='password' placeholder='Confirm Password' class='input-line full-width'></input>
         </div>
-        <div><button  class='ghost-round full-width'><a href="{% url 'adminwelcome'%}" Create Account></a></button></div>
+        <div><button  class='ghost-round full-width'><a href="{% url 'adminwelcome'%}"> Create Account</a></button></div>
         <strong style="font-size:20px;color: rgb(2, 2, 2);margin-bottom: 30px;"> Already have an account  <a href="{% url 'adminlogin'%}" >Sign in .</a></strong>
-</div>
+      </form>
+      </div>
     
     </div>
 </div>    

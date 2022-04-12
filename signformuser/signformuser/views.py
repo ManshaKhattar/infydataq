@@ -35,7 +35,7 @@ def loginuser(request):
     
     if request.method=="POST":
         loginsuccess=authenticate(request,username=request.POST.get('username'),password=request.POST.get('password')) 
-         
+        
         if loginsuccess is None:
             return render(request,'Login.html',{'form':AuthenticationForm(),'error':'The username and password are wrong..'})
         else:
@@ -44,11 +44,24 @@ def loginuser(request):
     else:
         return render(request,'Login.html',{'form':AuthenticationForm()})  
 
+def loginAdmin(request):
+    
+    if request.method=="POST":
+        loginsuccess=authenticate(request,username=request.POST.get('username'),password=request.POST.get('password')) 
+        
+        if loginsuccess is None:
+            return render(request,'ADMINLOGIN.html',{'form':AuthenticationForm(),'error':'The username and password are wrong..'})
+        else:
+            login(request,loginsuccess)
+            return redirect('Welcomepage')
+    else:
+        return render(request,'ADMINLOGIN.html',{'form':AuthenticationForm()})          
+
 def home(request): 
     return render(request,'Page1.html')    
 
 def Welcomepage(request):
-    return render(request,'welcome.html')       
+    return render(request,'index.html')       
 
 def logoutpage(request):
     if request.method=="POST":
@@ -62,3 +75,5 @@ def adminsignup(request):
     return render(request,'ADMINSIGNUP.html')
 def adminwelcome(request):
     return render(request,'ADMINWELCOME.html')
+def index(request):
+    return render(request,'index.html')    

@@ -47,9 +47,9 @@ body {
   
 </div>
 
-<h1 style="text-align:center;">WELCOME BACK USER</h1>
-    <form action="{% url 'fileapp:uploads' %}" method="POST" enctype="multipart/form-data">
-        <input type="text" name="filename"  placeholder="enter your file name" ><br><br>
+<h1 style="text-align:center;">WELCOME  USER</h1>
+    <form  method="POST" enctype="multipart/form-data">
+        <input type="text" name="filename"  placeholder="Enter file name" ><br><br>
         <input type="file" multiple name="uploadfoles" ><br><br>
         {% csrf_token %}
         <button type="submit">File Upload</button>
