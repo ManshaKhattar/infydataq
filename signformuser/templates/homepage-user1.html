@@ -210,10 +210,10 @@
     <div class="wrapper">
         <div class="top">
             <div class="hamburger">
-                <p style="text-align:center">Hi Bhavika</p>
+                <p style="text-align:center">Hi {{user.username}}</p>
             </div>
            
-                <p style="text-align:center">Hi Bhavika</p>
+                <p style="text-align:center">Hi {{user.username}}</p>
                
             <div class="logout">
                 <a href="#" class="btn btn-info btn-lg">
@@ -228,7 +228,7 @@
             <div class="profile">
                 <img src="https://cdn-icons-png.flaticon.com/512/1250/1250689.png" alt="profile_picture">
                 <!-- add name  -->
-                <h2>Bhavika</h2>                
+                <h2>{{user.username}}</h2>                
             </div>
             <!--menu item-->
             <ul style="list-style: none;">
@@ -240,7 +240,7 @@
         </div>
         <div class="main_container">
             <div class="box ">
-                <p style="text-align:center; margin-top: 100px;font-size: 30px; color: #5a0606;" > Hi user</p>
+                <p style="text-align:center; margin-top: 100px;font-size: 30px; color: #5a0606;" > Hi {{user.username}}</p>
                 <img src="https://cdn-icons-png.flaticon.com/512/1250/1250689.png" alt="profile_picture">
                
             </div>
