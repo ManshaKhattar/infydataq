@@ -38,7 +38,7 @@ body {
 </head>
 <body style="background-color:khaki;">
 <div class="topnav">
- <a class="active" href="#home">Home</a>
+ <a class="active" href="{% url 'sideview'%}">Home</a>
   <a href="#back">Back</a>
   <a href="#logout">Logout</a>
 </div>
@@ -49,17 +49,16 @@ body {
 
 <h1 style="text-align:center;">WELCOME  USER</h1>
     <form  method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
         <input type="text" name="filename"  placeholder="Enter file name" ><br><br>
-        <input type="file" multiple name="uploadfoles" ><br><br>
-        {% csrf_token %}
-        <button type="submit">File Upload</button>
+        <input type="file" name="file" id="file" required ><br><br>
+        <input type="submit"  value="Upload">
+        {% if something %}
+        <p> hello here is ur output </p>
+        {% else %}
+        <a href="{% url 'index' %}">please upload the file</a>
+        {% endif %}
     </form>
-
-    {% for d in data %}
-    
-   <p> {{d.f_name}} ---- <img width="50" src="{{d.myfiles.url}}"></p>
-    
-    {% endfor %}
     
 </body>
 </html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   

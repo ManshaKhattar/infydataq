@@ -1,4 +1,5 @@
 from django.db import IntegrityError
+from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from django.contrib.auth.models import User
@@ -6,6 +7,11 @@ from django.contrib.auth import authenticate
 from django.db import IntegrityError
 from django.contrib.auth import login, logout
 import re
+from .models import FileUpload
+import pandas as pd
+import openpyxl
+
+
 
 def signnewuser(request):
     if request.method=="POST":
@@ -20,7 +26,7 @@ def signnewuser(request):
             return render(request,'Signup.html',{'form':UserCreationForm(),'error': 'The Password length should be minimum 8 characters...'})
         elif request.POST.get('password1')==request.POST.get('password2'):
           try:
-            saveuser=User.objects.create_user(request.POST.get('username'),password=request.POST.get('password1'))
+            saveuser=User.objects.create_user(request.POST.get('username'),request.POST.get('email'),request.POST.get('password1'))
             saveuser.save()
             return render(request,'Signup.html',{'form':UserCreationForm(),'info':'The User ' +request.POST.get('username')+' is saved successfully...'})
           except IntegrityError:
@@ -61,7 +67,7 @@ def home(request):
     return render(request,'Page1.html')    
 
 def Welcomepage(request):
-    return render(request,'index.html')       
+    return redirect('index1')       
 
 def logoutpage(request):
     if request.method=="POST":
@@ -75,5 +81,26 @@ def adminsignup(request):
     return render(request,'ADMINSIGNUP.html')
 def adminwelcome(request):
     return render(request,'ADMINWELCOME.html')
+    
+def sideview(request):
+    return render(request,'sideview.html')
+def userdetails(request):
+    return render(request,'userdetails.html')
+def uploadedfiledetails(request):
+    return render(request,'uploadedfiledetails.html')
+def index1(request):
+    return render(request,'index1.html')
+
 def index(request):
-    return render(request,'index.html')    
+    if request.method == 'POST':
+        file2 = request.FILES["file"]
+        csv=pd.read_csv(file2)
+        print(csv.head())
+        df=csv.dropna(axis=0)
+        print(csv.to_string())
+        document=FileUpload.objects.create(file=file2)
+        document.save()
+        df.to_csv('cleaned_file.csv')
+        return HttpResponse("your file was saved")
+    else:
+        return render(request, 'index.html')
