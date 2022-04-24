@@ -232,8 +232,9 @@
             </div>
             <!--menu item-->
             <ul style="list-style: none;">
-                <li><a href="#">User Details</a></li>
-                <li><a href="#">Uploaded File Details</a></li>
+                <li><a href="{% url 'homepage-user1' %}">User Details</a></li>
+                <li><a href="{% url 'index' %}">Upload Files</a></li>
+                <li><a href="{% url 'uploadedfiledetails' %}">Uploaded File Details</a></li>
                 <li><a href="#">No of files Uploaded</a></li>
                 <li><a href="#">File retrospection </a></li>
             </ul>
