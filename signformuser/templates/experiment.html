@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+
+    </script>
+    <title>InfyDataQ</title>
+    <style>
+        /* body {background: #254e58;}; */
+        body {background:rgb(88, 137, 156);};
+            
+        /* wrapper */
+        *{
+            list-style: none;
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+            /* box-sizing: border-box; */
+            font-family: 'Open Sans', sans-serif;
+        }
+        .wrapper .top {
+            width: calc(100% -250px);
+            margin-left: 225px;
+            top: 0;
+            position: fixed;
+            /* left: 0; */
+            background: #112d3e;  ;
+            height: 55px;
+            display: flex;
+            width:100%;
+            border:1px solid;
+            border: color #112d3e;;  ; 
+            border-left: 0pc;
+           
+
+            }
+        .wrapper .top .logout{            
+            right: 10px;
+            top: 5px;
+            position: fixed;     
+            }
+        .wrapper .top p{            
+            right: 135px;
+            top: 10px;
+            bottom: 15px;
+            font-size: 25px;
+            padding-bottom: 10px;
+            position: fixed; 
+            text-align: center;    
+            }
+        .wrapper .sidebar{
+            background:#112d3e; ;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 225px;
+            height: 100%;
+            padding: 10px ;
+            transition: all 0.5s ease;
+            border:1px solid;
+            border-color:#112d3e;; 
+        }
+        
+        /* wrapper sidebar  */
+        /* profile name  */
+        .wrapper .sidebar .profile{
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .wrapper .sidebar .profile img{
+            padding-top: 10px; 
+            display: block;
+            width: 100px;
+            height: 100px;
+            border-radius: 10%;
+            margin: 0 auto;
+        }
+
+        .wrapper .sidebar .profile h2{
+            color: #8b9dd6;
+            margin: 10px 0 5px;
+            padding-bottom: 20px;
+            
+        }
+        .wrapper .sidebar .profile h2:hover{
+            color: #5a0606;
+             background: #8b9dd6;
+            
+
+
+        }
+        /* sidebar menu */
+        
+        .wrapper .sidebar ul li a{
+            display: block;
+            padding: 10px 30px 20px 0px;
+            border-bottom: 1px solid #C7C5F4; 
+            color: #8b9dd6;
+            font-size: 24px;
+            position: relative;
+            text-align: center;
+            
+        }      
+  
+        .wrapper .sidebar ul li a:hover,
+        .wrapper .sidebar ul li a.active{
+            color: #5a0606;
+                    
+            background: #8b9dd6;
+            border-right: 5px solid rgb(85, 3, 3);
+        }     
+
+        .wrapper .sidebar ul li a:hover:before,
+        .wrapper .sidebar ul li a.active:before{
+            display: block;
+        }
+        
+
+        .wrapper  .top .hamburger a{
+            margin-top: 20px;
+            padding-top: 20px;
+            margin-left: 15px;
+            margin-right: 10px;
+            padding-top: 10px            ;
+            font-size: 28px;
+            color:#C7C5F4;
+        }
+
+        .wrapper  .top .hamburger a:hover{
+            color: rgb(134, 46, 12);
+        }
+        body.active .wrapper .sidebar{
+            left: -225px;
+        }
+        body.active .wrapper .top{
+            margin-left: 0;
+            width: 100%;      }
+
+
+
+        .wrapper .main_container{
+            width: (100% - 250px);
+            margin-top: 70px;
+            margin-left: 250px;
+            /* margin-right: 300px; */
+            color: #5a0606;
+            padding: 15px;
+            transition: all 0.3s ease;
+            }
+       
+        
+        .wrapper .main_container .box img{
+            margin-top: 200px;
+            margin-left: 550px;  
+            align-items: center;             
+            display: block;
+            width: 75px;
+            height: 100px;
+            border-radius: 10%; 
+            margin: 0 auto;
+            transition: width 2s, height 2s, transform 2s;}
+           
+
+
+        .wrapper .main_container .box img:hover {
+            
+            display: block;
+            width: 150px;
+            height: 150px;
+            border-radius: 10%; 
+            margin: 0 auto;
+            transform: rotate(360deg);
+            
+            }
+        .wrapper .main_container .t1 {
+            margin-top: 30px ;
+            margin-left : 500px;
+            text-decoration: wavy;
+            text-shadow: #5a0606;
+            font-size: 20px;
+            color: #c8cfe6
+                }
+        .wrapper .main_container .t2 {
+           
+            margin-left : 500px;
+            text-decoration: wavy;
+            text-shadow: #5a0606;
+            font-size: 20px;
+            color: #c8cfe6;
+                }
+        .wrapper .main_container .t3 {
+           
+            margin-left : 500px;
+            text-decoration: wavy;
+            text-shadow: #5a0606;
+            font-size: 20px;
+            color: #c8cfe6;
+                }
+        input[type=submit] {    
+            margin-top: 30px; 
+            margin-left :100px;             
+            background-color:lightcyan;
+            width: 175px;
+            border: none;
+            padding: 15px;           
+            color: rgb(35, 26, 26);
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+            text-align: center;
+            text-decoration: none;
+            display:inline-block;
+            font-size: 16px;
+            
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            
+        }
+        input[type=submit]:hover {background-color:lightblue}
+
+        input[type=submit]:active {
+            background-color:lightgray;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+            }
+
+
+
+        input[type=reset]{    
+            margin-top: 30px; 
+            margin-left : 425px;             
+            background-color: lightcyan;
+            width: 175px;
+            border: none;
+            padding: 15px;           
+            color: rgb(24, 18, 18);
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+            text-align: center;
+            text-decoration: none;
+            display:inline-block;
+            font-size: 16px;
+            
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            
+        }
+        input[type=reset]:hover {background-color: lightblue}
+
+        input[type=reset]:active {
+            background-color: lightgray;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+            }
+        select  {
+           
+            background-color: white;
+            border: 1px solid black;
+            color: black;
+            padding: 5px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+
+        }
+        select:hover{opacity: 1}
+        
+       
+       
+          
+        
+       </style>
+       
+</head>
+<body>
+    <div class="wrapper">
+        <div class="top">
+            <div class="hamburger">
+                <p style="text-align:center;color: #8b9dd6;">Hi {{user.username}}</p>
+            </div>
+           
+                <!-- <p style="text-align:center">Hi {{user.username}}</p> -->
+               
+            <div class="logout">
+                <a href="#" class="btn btn-info btn-lg">
+                    <span class="glyphicon glyphicon-log-out"></span> Log out
+                  </a>
+            </div>
+        </div>
+        <!--Top menu -->
+        <div class="sidebar">
+            
+            <!--profile icon & name-->
+            <div class="profile">
+                
+                <img src="https://cdn-icons-png.flaticon.com/512/1250/1250689.png" alt="profile_picture">
+                <!-- add name  -->
+                <h2>{{user.username}}</h2>                
+            </div>
+            <!--menu item-->
+            <ul style="list-style: none;">
+                <li><a href="{% url 'homepage-user1' %}">User <br/>Details</a></li>
+                <li><a href="{% url 'index' %}">Upload Files</a></li>
+                <li><a href="{% url 'uploadedfiledetails' %}">Uploaded File Details</a></li>
+                <li><a href="#">No of files Uploaded</a></li>
+                <li><a href="#">File retrospection </a></li>
+            </ul>
+        </div>
+        <div class="main_container">
+            <div class="box ">
+                <h1 style="text-align:center; left :500px; margin-top: 70px;font-size: 30px; color:black ">File Retrospection </h1>
+                <p style="text-align:center; margin-top: 30px;font-size: 20px; color: black" > Hi {{user.username}}</p>
+                <img src="https://cdn-icons-png.flaticon.com/512/1250/1250689.png" alt="profile_picture">             
+               
+            </div>
+            <div class="t1"> Filename : # </div>
+            <div class="t2"> Upload Date : # </div>
+            <div class="t3"> Whether file is cleansed : <select  >
+                            <option value = "Yes"> Yes </option><option value = "No"> No</option> </select></div>
+            <form><br/><input type="reset" value="Reset"> <input type="submit" value="Submit"></form>     
+            
+                
+            
+          </div>
+        
+
+
+           
+            
+        
+
+    </div>
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
