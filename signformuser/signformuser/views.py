@@ -1,3 +1,4 @@
+import datetime
 from django.db import IntegrityError
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
@@ -10,6 +11,8 @@ import re
 from .models import FileUpload
 import pandas as pd
 import openpyxl
+import csv
+from datetime import datetime
 
 
 
@@ -94,13 +97,36 @@ def index1(request):
 def index(request):
     if request.method == 'POST':
         file2 = request.FILES["file"]
-        csv=pd.read_csv(file2)
-        print(csv.head())
-        df=csv.dropna(axis=0)
-        print(csv.to_string())
+        csv1=pd.read_csv(file2)
+        print(csv1.head())
+        df=csv1.dropna(axis=0)
+        print(csv1.to_string())
         document=FileUpload.objects.create(file=file2)
         document.save()
         df.to_csv('cleaned_file.csv')
+        rows = []
+  
+        
+        with open(r'cleaned_file.csv', 'r', newline='') as file:
+            with open(r'FILE2.csv', 'w', newline='') as file2:
+                
+                reader = csv.reader(file, delimiter=',')
+                
+                for row in reader:
+                    rows.append(row)
+        
+                
+                file_write = csv.writer(file2)
+        
+                
+                for val in rows:
+        
+                    
+                    current_date_time = datetime.now()
+                    val.insert(0, current_date_time)
+                    
+                    
+                    file_write.writerow(val)
         return HttpResponse("your file was saved")
     else:
         return render(request, 'index.html')
